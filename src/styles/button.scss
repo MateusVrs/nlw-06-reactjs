@@ -1,0 +1,27 @@
+@use 'base-flex';
+
+$base-purple: #835AFD;
+
+.button {
+    cursor: pointer;
+    @include base-flex.display-flex-base($gap: 8px);
+
+    height: 50px;
+    width: 100%;
+
+    background: $base-purple;
+    color: #f8f8f8;
+
+    border: none;
+    border-radius: 8px;
+
+    transition: filter 0.2s;
+    &:not(:disabled):hover {
+        filter: brightness(0.95);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
