@@ -1,14 +1,16 @@
-import { Button } from "./components/Button"
-import { Fragment } from "react"
+import { Home } from "./pages/Home";
+import { NewRoom } from './pages/NewRoom'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Fragment>
-      <h1>Hello World!</h1>
-      <Button />
-      <Button />
-      <Button />
-    </Fragment>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="rooms/new" element={<NewRoom />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
