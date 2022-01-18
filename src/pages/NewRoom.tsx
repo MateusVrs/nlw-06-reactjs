@@ -3,11 +3,16 @@ import logoImg from '../assets/images/logo.svg'
 import logInImg from '../assets/images/log-in.svg'
 
 import { Button } from '../components/Button'
+import { useAuth } from '../hooks/useAuth'
 
 import '../styles/auth.scss'
 
+import { Link } from 'react-router-dom'
+
 export function NewRoom() {
-    return(
+    const { user } = useAuth()
+
+    return (
         <div id="page-auth">
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
@@ -19,8 +24,8 @@ export function NewRoom() {
                     <img src={logoImg} alt="Letmeask" />
                     <h2>Criar uma nova sala</h2>
                     <form>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             placeholder="Nome da sala"
                         />
                         <Button type="submit">
@@ -28,7 +33,7 @@ export function NewRoom() {
                             Criar sala
                         </Button>
                     </form>
-                    <p>Quer entrar em uma sala já existente: <a href="/">Clique aqui</a></p>
+                    <p>Quer entrar em uma sala já existente: <Link to='/'>Clique aqui</Link></p>
                 </div>
             </main>
         </div>
