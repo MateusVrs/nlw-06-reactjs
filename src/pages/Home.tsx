@@ -12,12 +12,14 @@ import { useNavigate } from 'react-router-dom'
 
 export function Home() {
     const navigate = useNavigate()
+    
     const { user, signInWithGoogle } = useAuth()
 
     async function handleCreateRoom() {
         if (!user) {
             await signInWithGoogle()
         }
+
         navigate('/rooms/new')
     }
 
