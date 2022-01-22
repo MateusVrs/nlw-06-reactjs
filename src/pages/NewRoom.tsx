@@ -23,7 +23,7 @@ export function NewRoom() {
         event.preventDefault()
 
         if(newRoom.trim() === ''){
-            return;
+            return
         }
 
         const newPostRef = push(child(ref(database), 'rooms'))
@@ -32,7 +32,7 @@ export function NewRoom() {
             userId: user?.id
         }
 
-        const firebaseRoom = await update(newPostRef, newRoomData)
+        await update(newPostRef, newRoomData)
 
         navigate(`/rooms/${newPostRef.key}`)
     }
