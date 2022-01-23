@@ -5,9 +5,10 @@ import { Room } from "./pages/Room";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { AuthContextProvider } from './contexts/AuthContext'
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { AdminRoom } from "./pages/AdminRoom";
 
 function App() {
-
 
   return (
     <BrowserRouter>
@@ -16,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/rooms/new" element={<NewRoom />} />
           <Route path="/rooms/:id" element={<Room />} />
+
+          <Route path="/admin/rooms/:id" element={<ProtectedRoute element={<AdminRoom />} />} />
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>
