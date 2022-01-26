@@ -1,6 +1,9 @@
 @use 'base-flex';
 
-$base-purple: #835AFD;
+$base-purple: rgb(131, 90, 253);
+$white: #fff; 
+
+$dark-purple: rgba(131, 90, 253, 0.75);
 
 #page-auth {
     display: flex;
@@ -10,7 +13,7 @@ $base-purple: #835AFD;
     aside {
         flex: 3;
         background: $base-purple;
-        color: #fff;
+        color: $white;
 
         display: flex;
         flex-direction: column;
@@ -84,7 +87,7 @@ $base-purple: #835AFD;
                 width: 100%;
                 border-radius: 8px;
                 padding: 0 16px;
-                background: #fff;
+                background: $white;
                 border: 1px solid #A8A8B3;
                 margin-bottom: 20px;
                 outline: none;
@@ -111,13 +114,49 @@ $base-purple: #835AFD;
             grid-template-columns: 1fr 3fr 1fr;
             margin: 25px 0;
             font-size: 14px;
-            color: #A8A8B3;
+            color: rgb(168, 168, 179);
 
             hr {
+                border: 0;
                 align-self: center;
-                height: 1px;
+                border-top: 1px solid #A8A8B3;
             }
         }
     }
 }
 
+.dark {
+    #page-auth {
+        aside {
+            background: $dark-purple;
+            transition: background-color 0.5s ease;
+        }
+
+        .main-content {
+            > img {
+                content: url('../assets/images/logo-dark.svg');
+                transition: content 0.5s ease;
+            }
+
+            > button {
+                background: rgba(234, 68, 53, 0.8);
+            }
+
+            .div-line {
+                color: rgb(168, 168, 179, 0.8);
+
+                hr {
+                    border-top: 1px solid rgb(168, 168, 179, 0.8);
+                }
+            }
+
+            p {
+                color: hsl(240, 5%, 80%);
+
+                a {
+                    color: hsl(293, 93%, 70%);
+                }
+            }
+        }
+    }
+}

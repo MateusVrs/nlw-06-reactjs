@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
 import { ref, get } from 'firebase/database'
+import { ToggleDark } from '../components/ToggleDark'
 
 export function Home() {
     const navigate = useNavigate()
@@ -56,6 +57,7 @@ export function Home() {
                 <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
             </aside>
             <main>
+                <ToggleDark />
                 <div className='main-content'>
                     <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} >

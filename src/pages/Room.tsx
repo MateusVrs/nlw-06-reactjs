@@ -6,7 +6,7 @@ import { Question } from '../components/Question'
 
 import '../styles/room.scss'
 
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
 
 import { useAuth } from '../hooks/useAuth'
@@ -14,6 +14,7 @@ import { useRoom } from '../hooks/useRoom'
 
 import { ref, push, child, update, remove } from 'firebase/database'
 import { database } from '../services/firebase'
+import { ToggleDark } from '../components/ToggleDark'
 
 
 type RoomParams = {
@@ -74,9 +75,10 @@ export function Room() {
         <div id="page-room">
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <Link to='/'><img src={logoImg} alt="Letmeask" /></Link>
                     <RoomCode code={roomId} />
                 </div>
+                <ToggleDark />
             </header>
 
             <main>

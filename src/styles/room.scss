@@ -10,10 +10,12 @@
             justify-content: space-between;
             align-items: center;
 
-            > img {
-                max-height: 45px;
+            a {
+                > img {
+                    max-height: 45px;
+                }
             }
-
+            
             > div {
                 display: flex;
                 gap: 16px;
@@ -58,6 +60,7 @@
                 padding: 16px;
                 border-radius: 8px;
                 background: #fefefe;
+                transition: background-color 0.5s ease;
                 box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
                 resize: vertical;
                 min-height: 130px;
@@ -107,6 +110,50 @@
 
         .question-list {
             margin-top: 32px;
+        }
+    }
+}
+
+.dark {
+    #page-room {
+        header {
+            border-bottom: 1px solid #737380;
+
+            .content {
+                a{
+                    > img {
+                        content: url('../assets/images/logo-dark.svg');
+                    }
+                }
+            }
+        }
+
+        main {
+            .room-title {
+                h1 {
+                    color: #f8f8f8;
+                }
+
+                span {
+                    background: rgba(230, 89, 249, 0.8);
+                }
+            }
+        }
+
+        form {
+            textarea {
+                box-shadow: 0 2px 12px rgba(255, 255, 255, 0.04);
+                background: #29292e;
+                color: #fefefe;
+            }
+
+            .form-footer {
+                .user-info {
+                    span {
+                        color: #f8f8f8;
+                    }
+                }
+            }
         }
     }
 }

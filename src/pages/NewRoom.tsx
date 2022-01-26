@@ -11,6 +11,7 @@ import '../styles/auth.scss'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
+import { ToggleDark } from '../components/ToggleDark'
 
 
 export function NewRoom() {
@@ -45,6 +46,7 @@ export function NewRoom() {
                 <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
             </aside>
             <main>
+                <ToggleDark />
                 <div className='main-content'>
                     <img src={logoImg} alt="Letmeask" />
                     <h2>Criar uma nova sala</h2>

@@ -9,12 +9,14 @@ import { Question, QuestionProps } from '../components/Question'
 
 import '../styles/room.scss'
 
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 
 import { useRoom } from '../hooks/useRoom'
 
 import { ref, remove, update } from 'firebase/database'
 import { database } from '../services/firebase'
+import { ToggleDark } from '../components/ToggleDark'
+
 
 type RoomParams = {
     id: string;
@@ -57,7 +59,7 @@ export function AdminRoom() {
         <div id="page-room">
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <Link to='/'><img src={logoImg} alt="Letmeask" /></Link>
                     <div>
                         <RoomCode code={roomId} />
                         <Button
@@ -68,6 +70,7 @@ export function AdminRoom() {
                         </Button>
                     </div>
                 </div>
+                <ToggleDark />
             </header>
 
             <main>
